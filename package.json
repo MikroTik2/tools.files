@@ -1,33 +1,40 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "dependencies": {
-    "@nuxtjs/color-mode": "^3.5.2",
-    "@nuxtjs/tailwindcss": "^6.13.1",
-    "@radix-icons/vue": "^1.0.0",
-    "@vee-validate/zod": "^4.15.0",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "nuxt": "^3.15.4",
-    "radix-vue": "^1.9.13",
-    "shadcn-nuxt": "^0.11.3",
-    "tailwind-merge": "^3.0.1",
-    "tailwindcss-animate": "^1.0.7",
-    "vee-validate": "^4.15.0",
-    "vue": "latest",
-    "vue-router": "latest",
-    "zod": "^3.24.1"
-  },
-  "devDependencies": {
-    "sass": "^1.83.4",
-    "typescript": "^5.7.3"
-  }
+    "name": "nuxt-app",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
+        "postinstall": "nuxt prepare"
+    },
+    "dependencies": {
+        "@nuxtjs/color-mode": "^3.5.2",
+        "@nuxtjs/tailwindcss": "^6.13.1",
+        "@radix-icons/vue": "^1.0.0",
+        "@vee-validate/zod": "^4.15.0",
+        "class-variance-authority": "^0.7.1",
+        "clsx": "^2.1.1",
+        "nuxt": "^3.15.4",
+        "radix-vue": "^1.9.13",
+        "shadcn-nuxt": "^0.11.3",
+        "tailwind-merge": "^3.0.1",
+        "tailwindcss-animate": "^1.0.7",
+        "vee-validate": "^4.15.0",
+        "vue": "latest",
+        "vue-router": "latest",
+        "zod": "^3.24.1"
+    },
+    "devDependencies": {
+        "@antfu/eslint-config": "^4.1.1",
+        "@nuxt/eslint": "^1.0.0",
+        "eslint": "^9.19.0",
+        "eslint-plugin-format": "^1.0.1",
+        "eslint-plugin-vue": "^9.32.0",
+        "sass": "^1.83.4",
+        "typescript": "^5.7.3"
+    }
 }

@@ -1,19 +1,19 @@
 <script setup lang="ts">
+import type { NavigationMenuLinkEmits, NavigationMenuLinkProps } from 'radix-vue';
 import {
-  NavigationMenuLink,
-  type NavigationMenuLinkEmits,
-  type NavigationMenuLinkProps,
-  useForwardPropsEmits,
-} from 'radix-vue'
+    NavigationMenuLink,
 
-const props = defineProps<NavigationMenuLinkProps>()
-const emits = defineEmits<NavigationMenuLinkEmits>()
+    useForwardPropsEmits,
+} from 'radix-vue';
 
-const forwarded = useForwardPropsEmits(props, emits)
+const props = defineProps<NavigationMenuLinkProps>();
+const emits = defineEmits<NavigationMenuLinkEmits>();
+
+const forwarded = useForwardPropsEmits(props, emits);
 </script>
 
 <template>
-  <NavigationMenuLink v-bind="forwarded">
-    <slot />
-  </NavigationMenuLink>
+    <NavigationMenuLink v-bind="forwarded">
+        <slot />
+    </NavigationMenuLink>
 </template>
