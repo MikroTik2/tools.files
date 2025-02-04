@@ -48,7 +48,7 @@ const components: { title: string; href: string; description: string }[] = [
 </script>
 
 <template>
-    <header class="sticky top-0 z-40 bg-background/80 backdrop-blur-lg">
+    <header class="sticky top-0 z-40 bg-background/80 backdrop-blur-lg border-b border-border">
         <Container>
             <div class="w-full p-2 transition-colors duration-500 backdrop-blur-md supports-[backdrop-filter]:bg-neutrals-900/50">
                 <div class="grid grid-cols-3">
