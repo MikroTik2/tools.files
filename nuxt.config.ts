@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     modules: [
         ['@nuxtjs/tailwindcss', { viewer: false }],
         '@nuxtjs/color-mode',
+        'nuxt-lucide-icons',
         'shadcn-nuxt',
         '@nuxt/eslint',
     ],
@@ -42,4 +43,5 @@ export default defineNuxtConfig({
         prefix: '',
         componentDir: './components/ui',
     },
+
 });

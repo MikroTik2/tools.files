@@ -1,3 +1,5 @@
 <template>
-    <Button>КАРТОШКА</Button>
+    <NuxtLayout>
+        <Button>АНАТОЛИЙ ЧУБАЙС, ЛОЛ</Button>
+    </NuxtLayout>
 </template>
