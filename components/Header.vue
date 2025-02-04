@@ -6,30 +6,38 @@ import {
     NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
+    navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+import { cn } from '@/lib/utils';
 
-const components: { title: string; href: string; description: string }[] = [
+interface IProps {
+    title: string;
+    href: string;
+    description: string;
+};
+
+const components: IProps[] = [
     {
         title: 'Alert Dialog',
-        href: '/docs/components/alert-dialog',
+        href: '/',
         description:
             'A modal dialog that interrupts the user with important content and expects a response.',
     },
     {
         title: 'Hover Card',
-        href: '/docs/components/hover-card',
+        href: '/',
         description:
             'For sighted users to preview content available behind a link.',
     },
     {
         title: 'Progress',
-        href: '/docs/components/progress',
+        href: '/',
         description:
             'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
     },
     {
         title: 'Scroll-area',
-        href: '/docs/components/scroll-area',
+        href: '/',
         description: 'Visually or semantically separates content.',
     },
     {
@@ -48,20 +56,18 @@ const components: { title: string; href: string; description: string }[] = [
 </script>
 
 <template>
-    <header class="sticky top-0 z-40 bg-background/80 backdrop-blur-lg border-b border-border">
+    <header id="header" class="sticky top-0 z-40 transition-colors duration-500 bg-background/80 backdrop-blur-lg">
         <Container>
-            <div class="w-full p-2 transition-colors duration-500 backdrop-blur-md supports-[backdrop-filter]:bg-neutrals-900/50">
-                <div class="grid grid-cols-3">
-                    <div class="flex items-center lg:hidden">
-                        menu
-                    </div>
+            <div class="w-full p-2">
+                <div class="grid grid-cols-2 lg:grid-cols-3">
                     <div class="flex items-center max-lg:hidden">
                         <a href="/" title="Navigation home" class="flex">
                             <span class="h-7 w-7 bg-gradient-to-b from-muted/50 to-muted" />
                             <span class="ml-3 self-center font-bold">Tools Files</span>
                         </a>
                     </div>
-                    <NavigationMenu>
+
+                    <NavigationMenu class="lg:flex hidden">
                         <NavigationMenuList>
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
@@ -148,15 +154,22 @@ const components: { title: string; href: string; description: string }[] = [
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NavigationMenuLink href="/docs/introduction">
+                                <NuxtLink :class="cn(navigationMenuTriggerStyle())" to="/">
                                     Documentation
-                                </NavigationMenuLink>
+                                </NuxtLink>
                             </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>
+
+                    <div class="lg:hidden flex items-center">
+                        <Button variant="ghost" size="icon">
+                            <LucideMenu class="!size-[18px]" />
+                        </Button>
+                    </div>
+
                     <div class="flex items-center justify-end">
-                        <Button variant="ghost">
-                            <LucideGithub />
+                        <Button variant="ghost" size="icon">
+                            <LucideGithub class="!size-[18px]" />
                         </Button>
                     </div>
                 </div>

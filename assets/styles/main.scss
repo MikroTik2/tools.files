@@ -1,0 +1,27 @@
+.aurora-background-gradient-after {
+    @apply after:content-[""]
+          after:absolute
+          after:inset-0
+          after:[background-image:var(--white-gradient),var(--aurora)]
+          after:dark:[background-image:var(--dark-gradient),var(--aurora)]
+          after:[background-size:200%,_100%]
+          after:[background-attachment:fixed]
+          after:mix-blend-difference;
+}
+
+.aurora-gradient-animation::after {
+    animation: animate-aurora 60s linear infinite;
+}
+
+@keyframes animate-aurora {
+    0% {
+        background-position:
+            50% 50%,
+            50% 50%;
+    }
+    100% {
+        background-position:
+            350% 50%,
+            350% 50%;
+    }
+}

@@ -3,6 +3,7 @@ export default defineNuxtConfig({
     compatibilityDate: '2024-11-01',
     modules: [
         ['@nuxtjs/tailwindcss', { viewer: false }],
+        '~/modules/home',
         '@nuxtjs/color-mode',
         'nuxt-lucide-icons',
         'shadcn-nuxt',
