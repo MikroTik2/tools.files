@@ -1,3 +1,3 @@
 <template>
-    <Button>Button</Button>
+    <Button>КАРТОШКА</Button>
 </template>

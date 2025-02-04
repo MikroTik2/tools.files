@@ -16,10 +16,11 @@ export default antfu({
     },
 }, {
     rules: {
-        'no-undef': 0,
-        'vue/multi-word-component-names': 0,
         'unused-imports/no-unused-vars': 1,
-        'symbol-description': 0,
         'ts/no-explicit-any': 1,
+        'no-undef': 0,
+        'yaml/indent': 0,
+        'vue/multi-word-component-names': 0,
+        'symbol-description': 0,
     },
 });
