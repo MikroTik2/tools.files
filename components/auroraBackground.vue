@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 interface IAuroraBackgroundProps {
     radialGradient?: boolean;
     class?: string;
+    tag?: 'div' | 'section';
 };
 
 const props = withDefaults(defineProps<IAuroraBackgroundProps>(), {
@@ -12,9 +13,12 @@ const props = withDefaults(defineProps<IAuroraBackgroundProps>(), {
 </script>
 
 <template>
-    <div
+    <component
+        :is="props.tag"
         v-bind="props"
-        :class="cn('relative flex flex-col h-[100vh] items-center justify-center bg-zinc-50 dark:bg-zinc-900 text-slate-950 transition-bg', props.class)"
+        id="hero"
+        aria-labelledby="hero-heading"
+        :class="cn('relative flex flex-col h-[100vh] items-center justify-center text-slate-950 transition-bg', props.class)"
     >
         <div class="absolute inset-0 overflow-hidden">
             <div
@@ -33,5 +37,5 @@ const props = withDefaults(defineProps<IAuroraBackgroundProps>(), {
         </div>
 
         <slot />
-    </div>
+    </component>
 </template>

@@ -4,7 +4,7 @@ import { Motion } from 'motion-v';
 </script>
 
 <template>
-    <AuroraBackground>
+    <AuroraBackground tag="section">
         <Motion
             as="div"
             class="relative flex flex-col text-white items-center justify-center gap-4 px-4"
