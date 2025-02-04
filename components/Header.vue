@@ -52,10 +52,10 @@ const components: { title: string; href: string; description: string }[] = [
         <Container>
             <div class="w-full p-2 transition-colors duration-500 backdrop-blur-md supports-[backdrop-filter]:bg-neutrals-900/50">
                 <div class="grid grid-cols-3">
-                    <div class="flex justify-center lg:hidden">
+                    <div class="flex items-center lg:hidden">
                         menu
                     </div>
-                    <div class="flex items-center">
+                    <div class="flex items-center max-lg:hidden">
                         <a href="/" title="Navigation home" class="flex">
                             <span class="h-7 w-7 bg-gradient-to-b from-muted/50 to-muted" />
                             <span class="ml-3 self-center font-bold">Tools Files</span>
