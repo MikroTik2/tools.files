@@ -1,3 +1,5 @@
 <template>
-    footer
+    <footer>
+        <Container />
+    </footer>
 </template>

@@ -1,5 +1,10 @@
+<script setup lang="ts">
+import Index from './pages/index.vue';
+</script>
+
 <template>
     <NuxtLayout>
-        <Button>АНАТОЛИЙ ЧУБАЙС, ЛОЛ</Button>
+        <Index />
+        <!-- <Button>АНАТОЛИЙ ЧУБАЙС, ЛОЛ</Button> -->
     </NuxtLayout>
 </template>
