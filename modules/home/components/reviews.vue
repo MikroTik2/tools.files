@@ -40,7 +40,30 @@ const reviews = [
         body: 'I\'m at a loss for words. This is amazing. I love it.',
         img: '../../..//public/gif3.gif',
     },
-
+    {
+        name: 'James',
+        username: '@james',
+        body: 'I\'m at a loss for words. This is amazing. I love it.',
+        img: '../../..//public/gif6.gif',
+    },
+    {
+        name: 'James',
+        username: '@james',
+        body: 'I\'m at a loss for words. This is amazing. I love it.',
+        img: '../../..//public/gif7.gif',
+    },
+    {
+        name: 'James',
+        username: '@james',
+        body: 'I\'m at a loss for words. This is amazing. I love it.',
+        img: '../../..//public/gif8.gif',
+    },
+    {
+        name: 'James',
+        username: '@james',
+        body: 'I\'m at a loss for words. This is amazing. I love it.',
+        img: '../../..//public/gif9.gif',
+    },
 ];
 
 // Split reviews into two rows
@@ -91,7 +114,7 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
                     <Marquee
                         reverse
                         pause-on-hover
-                        class="[--duration:20s]"
+                        class="[--duration:50s]"
                         style="transform: translateY(-11.5rem) rotate(-16deg);"
                     >
                         <CardReview
@@ -107,7 +130,7 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
                     <!-- First Marquee -->
                     <Marquee
                         pause-on-hover
-                        class="[--duration:20s]"
+                        class="[--duration:50s]"
                         style="transform: translateY(-11.5rem) rotate(-16deg);"
                     >
                         <CardReview
