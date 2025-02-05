@@ -21,8 +21,8 @@ import {
                         <CardContent>
                             <div class="text-center">
                                 <h3 class="relative z-20 py-4">
-                                    <span class="text-4xl">✨</span>
-                                    <span class="text-4xl bg-gradient-to-b bg-clip-text from-neutral-200 to-neutral-500 font-bold text-transparent">About Our Service</span>
+                                    <span class="text-5xl">✨</span>
+                                    <span class="text-5xl bg-gradient-to-b bg-clip-text from-neutral-200 to-neutral-500 font-bold text-transparent">About Our Service</span>
                                 </h3>
                                 <p>
                                     Our service provides a convenient and fast way to compress

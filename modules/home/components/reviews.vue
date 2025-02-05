@@ -8,37 +8,37 @@ const reviews = [
         name: 'Jack',
         username: '@jack',
         body: 'I\'ve never seen anything like this before. It\'s amazing. I love it.',
-        img: 'https://avatar.vercel.sh/jack',
+        img: '../../..//public/gif1.gif',
     },
     {
         name: 'Jill',
         username: '@jill',
         body: 'I don\'t know what to say. I\'m speechless. This is amazing.',
-        img: 'https://avatar.vercel.sh/jill',
+        img: '../../..//public/gif2.gif',
     },
     {
         name: 'John',
         username: '@john',
         body: 'I\'m at a loss for words. This is amazing. I love it.',
-        img: 'https://avatar.vercel.sh/john',
+        img: '../../..//public/gif3.gif',
     },
     {
         name: 'Jane',
         username: '@jane',
         body: 'I\'m at a loss for words. This is amazing. I love it.',
-        img: 'https://avatar.vercel.sh/jane',
+        img: '../../..//public/gif4.gif',
     },
     {
         name: 'Jenny',
         username: '@jenny',
         body: 'I\'m at a loss for words. This is amazing. I love it.',
-        img: 'https://avatar.vercel.sh/jenny',
+        img: '../../..//public/gif5.gif',
     },
     {
         name: 'James',
         username: '@james',
         body: 'I\'m at a loss for words. This is amazing. I love it.',
-        img: 'https://avatar.vercel.sh/james',
+        img: '../../..//public/gif3.gif',
     },
 
 ];
@@ -49,12 +49,8 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
 </script>
 
 <template>
-    <section id="features" class="relative" aria-labelledby="features">
+    <section id="features" class="relative py-12" aria-labelledby="features">
         <Container>
-            <div class="py-12 text-5xl text-center font-semibold">
-                Loved by community
-            </div>
-
             <div
                 class="relative h-[430px] w-full overflow-hidden rounded-xl border bg-white shadow-lg dark:bg-background"
             >
