@@ -26,10 +26,13 @@ import {
                                 </h3>
                                 <p>
                                     Our service provides a convenient and fast way to compress
-                                    <FlipWords
-                                        :words="['image', 'video', 'audio']"
-                                        :duration="2000"
-                                    />files without quality loss. <br> Using powerful <span class="text-neutral-100 z-10 relative">FFmpeg-based compression</span> algorithms, we ensure minimal file size <br> while preserving their original resolution and clarity.
+                                    <ClientOnly>
+                                        <FlipWords
+                                            :words="['image', 'video', 'audio']"
+                                            :duration="2000"
+                                        />
+                                    </ClientOnly>
+                                    files without quality loss. <br> Using powerful <span class="text-neutral-100 z-10 relative">FFmpeg-based compression</span> algorithms, we ensure minimal file size <br> while preserving their original resolution and clarity.
                                 </p>
                             </div>
                         </CardContent>
