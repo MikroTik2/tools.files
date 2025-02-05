@@ -23,7 +23,7 @@ const props = withDefaults(
     <div
         :class="
             cn(
-                'group flex overflow-hidden p-3 [--duration:40s] [--gap:1rem] [gap:var(--gap)]',
+                'group marquee flex overflow-hidden p-3 [--duration:40s] [--gap:1rem] [gap:var(--gap)]',
                 vertical ? 'flex-col' : 'flex-row',
                 props.class,
             )

@@ -115,7 +115,7 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
                         reverse
                         pause-on-hover
                         class="[--duration:50s]"
-                        style="transform: translateY(-11.5rem) rotate(-16deg);"
+                        style="transform: translateY(1rem) rotate(-16deg);"
                     >
                         <CardReview
                             v-for="review in secondRow"
@@ -131,7 +131,7 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
                     <Marquee
                         pause-on-hover
                         class="[--duration:50s]"
-                        style="transform: translateY(-11.5rem) rotate(-16deg);"
+                        style="transform: translateY(13.5rem) rotate(-16deg);"
                     >
                         <CardReview
                             v-for="review in firstRow"
@@ -148,7 +148,7 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
                         reverse
                         pause-on-hover
                         class="[--duration:20s]"
-                        style="transform: translateY(-11.5rem) rotate(-16deg);"
+                        style="transform: translateY(26rem) rotate(-16deg);"
                     >
                         <CardReview
                             v-for="review in secondRow"

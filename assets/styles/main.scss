@@ -166,3 +166,11 @@
 .move-bottom-left {
     animation-name: to-bottom-left;
 }
+
+.marquee {
+    --duratuin: 40;
+    left: -10%;
+    padding: 0.5rem 0;
+    position: absolute;
+    width: 120%;
+}
