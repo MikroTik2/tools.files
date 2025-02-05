@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import AuroraBackground from '@/components/auroraBackground.vue';
 import { Motion } from 'motion-v';
 </script>
 
