@@ -1,49 +1,48 @@
-.aurora-background-gradient-after {
-    @apply after:content-[""]
-          after:absolute
-          after:inset-0
-          after:[background-image:var(--white-gradient),var(--aurora)]
-          after:dark:[background-image:var(--dark-gradient),var(--aurora)]
-          after:[background-size:200%,_100%]
-          after:[background-attachment:fixed]
-          after:mix-blend-difference;
-}
+<script setup lang="ts">
+import type { BaseProps as Props } from '.';
+import { cn } from '@/lib/utils';
+import {
+    PATTERN_BACKGROUND_DIRECTION,
+    PATTERN_BACKGROUND_SPEED,
+    PATTERN_BACKGROUND_VARIANT,
+    patternBackgroundMaskVariants,
+    patternBackgroundVariants,
+} from '.';
 
-.aurora-gradient-animation::after {
-    animation: animate-aurora 60s linear infinite;
-}
+const props = withDefaults(defineProps<Props>(), {
+    direction: () => PATTERN_BACKGROUND_DIRECTION.Top,
+    variant: () => PATTERN_BACKGROUND_VARIANT.Grid,
+    speed: () => PATTERN_BACKGROUND_SPEED.Default,
+    size: undefined,
+    mask: undefined,
+});
 
-@keyframes animate-aurora {
-    0% {
-        background-position:
-            50% 50%,
-            50% 50%;
-    }
-    100% {
-        background-position:
-            350% 50%,
-            350% 50%;
-    }
-}
+const durationFormSpeed = computed(() => `${props.speed}ms`);
+</script>
 
-@keyframes meteor {
-    0% {
-        transform: rotate(215deg) translateX(0);
-        opacity: 1;
-    }
-    70% {
-        opacity: 1;
-    }
-    100% {
-        transform: rotate(215deg) translateX(-500px);
-        opacity: 0;
-    }
-}
+<template>
+    <div
+        :class="
+            cn(
+                patternBackgroundVariants({ variant, size }),
+                ` ${animate ? `move move-${direction}` : ''} `,
+                props.class,
+            )
+        "
+    >
+        <div
+            :class="
+                cn(
+                    'absolute pointer-events-none inset-0 flex items-center justify-center',
+                    patternBackgroundMaskVariants({ mask }),
+                )
+            "
+        />
+        <slot />
+    </div>
+</template>
 
-.animate-meteor {
-    animation: meteor 5s linear infinite;
-}
-
+<style scoped>
 @keyframes to-top {
     0% {
         background-position: 0 100%;
@@ -139,3 +138,4 @@
 .move-bottom-left {
     animation-name: to-bottom-left;
 }
+</style>

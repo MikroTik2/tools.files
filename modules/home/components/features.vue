@@ -47,13 +47,9 @@ const features = ref<ICard[]>([
     <section id="features" class="relative" aria-labelledby="features">
         <Container>
             <div class="flex flex-col items-center justify-center">
-                <ClientOnly>
-                    <BlurReveal :delay="0.2" :duration="0.75">
-                        <h2 class="mb-6 py-12 text-5xl font-semibold">
-                            Features
-                        </h2>
-                    </BlurReveal>
-                </ClientOnly>
+                <h2 class="mb-6 py-12 text-5xl font-semibold">
+                    Features
+                </h2>
 
                 <div class="flex flex-row flex-wrap items-center justify-center gap-6">
                     <ClientOnly>
