@@ -6,6 +6,7 @@ useHead({
 
 <template>
     <Hero />
+    <Services />
     <About />
     <Features />
     <Reviews />

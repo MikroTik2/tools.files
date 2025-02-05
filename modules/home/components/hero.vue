@@ -11,14 +11,14 @@ import { Motion } from 'motion-v';
             :in-view="{ opacity: 1, y: 0, filter: 'blur(0px)' }"
             :transition="{ delay: 0.3, duration: 0.8, ease: 'easeInOut' }"
         >
-            <a href="/" class="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm font-medium hover:cursor-pointer">
+            <NuxtLink to="/" class="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm font-medium hover:cursor-pointer">
                 <LucideRocket class="!h-[16px] !w-[16px]" />
 
                 <Separator orientation="vertical" class="shrink-0 bg-border w-px mx-2 h-4 dark:bg-gray-600" />
 
                 <span class="underline-offset-4 hover:underline">Get Started</span>
                 <LucideArrowRight class="!h-[16px] !w-[16px] ml-1" />
-            </a>
+            </NuxtLink>
 
             <h1 class="text-center text-3xl font-bold md:text-7xl dark:text-white">
                 File Compression Made Simple.
@@ -28,10 +28,10 @@ import { Motion } from 'motion-v';
             </p>
 
             <div class="flex gap-3 items-center">
-                <Button class="h-[43px] rounded-full">
+                <Button>
                     <span>Upload files</span>
                 </Button>
-                <Button class="h-[43px] rounded-full" variant="outline">
+                <Button variant="outline">
                     <span>Read More</span>
                 </Button>
             </div>
