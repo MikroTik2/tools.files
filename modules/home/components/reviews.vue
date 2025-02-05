@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+
 // Reviews data
 const reviews = [
     {
@@ -61,8 +64,8 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
                 <p class="m-4 text-base sm:text-lg">
                     Get started and start building awesome UI
                 </p>
-                <a href="/">
-                    <Button>Get Started</Button>
+                <a class="h-[43px] !rounded-full" :class="cn(buttonVariants())" href="/">
+                    Get Started
                 </a>
             </div>
 
@@ -73,7 +76,7 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
                     class="[--duration:20s]"
                     style="transform: translateY(-11.5rem) rotate(-16deg);"
                 >
-                    <ReviewCard
+                    <CardReview
                         v-for="review in firstRow"
                         :key="review.username"
                         :img="review.img"
@@ -90,7 +93,7 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
                     class="[--duration:20s]"
                     style="transform: translateY(-11.5rem) rotate(-16deg);"
                 >
-                    <ReviewCard
+                    <CardReview
                         v-for="review in secondRow"
                         :key="review.username"
                         :img="review.img"
@@ -106,7 +109,7 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
                     class="[--duration:20s]"
                     style="transform: translateY(-11.5rem) rotate(-16deg);"
                 >
-                    <ReviewCard
+                    <CardReview
                         v-for="review in firstRow"
                         :key="review.username"
                         :img="review.img"
@@ -123,7 +126,7 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
                     class="[--duration:20s]"
                     style="transform: translateY(-11.5rem) rotate(-16deg);"
                 >
-                    <ReviewCard
+                    <CardReview
                         v-for="review in secondRow"
                         :key="review.username"
                         :img="review.img"

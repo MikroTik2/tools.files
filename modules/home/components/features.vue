@@ -47,7 +47,7 @@ const features = ref<ICard[]>([
     <section id="features" class="relative" aria-labelledby="features">
         <Container>
             <div class="flex flex-col items-center justify-center">
-                <h2 class="mb-6 py-12 text-5xl font-semibold">
+                <h2 class="pb-12 text-5xl font-semibold">
                     Features
                 </h2>
 
@@ -65,8 +65,6 @@ const features = ref<ICard[]>([
                             <p class="relative z-50 mb-4 text-base font-normal text-zinc-500">
                                 {{ element.description }}
                             </p>
-
-                            <Meteors />
                         </CardSpotlight>
                     </ClientOnly>
                 </div>

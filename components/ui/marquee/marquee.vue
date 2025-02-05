@@ -1,14 +1,16 @@
 <script lang="ts" setup>
 import { cn } from '@/lib/utils';
 
+interface IProps {
+    class?: string;
+    reverse?: boolean;
+    pauseOnHover?: boolean;
+    vertical?: boolean;
+    repeat?: number;
+}
+
 const props = withDefaults(
-    defineProps<{
-        class?: string;
-        reverse?: boolean;
-        pauseOnHover?: boolean;
-        vertical?: boolean;
-        repeat?: number;
-    }>(),
+    defineProps<IProps>(),
     {
         pauseOnHover: false,
         vertical: false,

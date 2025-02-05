@@ -20,9 +20,9 @@ import {
                     >
                         <CardContent>
                             <div class="text-center">
-                                <h3 class="relative z-20 py-8">
-                                    <span class="text-3xl">✨</span>
-                                    <span class="text-3xl bg-gradient-to-b bg-clip-text from-neutral-200 to-neutral-500 font-bold text-transparent">About Our Service</span>
+                                <h3 class="relative z-20 py-4">
+                                    <span class="text-4xl">✨</span>
+                                    <span class="text-4xl bg-gradient-to-b bg-clip-text from-neutral-200 to-neutral-500 font-bold text-transparent">About Our Service</span>
                                 </h3>
                                 <p>
                                     Our service provides a convenient and fast way to compress
@@ -31,8 +31,7 @@ import {
                                             :words="['image', 'video', 'audio']"
                                             :duration="2000"
                                         />
-                                    </ClientOnly>
-                                    files without quality loss. <br> Using powerful <span class="text-neutral-100 z-10 relative">FFmpeg-based compression</span> algorithms, we ensure minimal file size <br> while preserving their original resolution and clarity.
+                                    </ClientOnly>files without quality loss. <br> Using powerful <span class="text-neutral-100 z-10 relative">FFmpeg-based compression</span> algorithms, we ensure minimal file size <br> while preserving their original resolution and clarity.
                                 </p>
                             </div>
                         </CardContent>
