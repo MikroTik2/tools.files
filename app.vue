@@ -1,5 +1,5 @@
 <template>
     <NuxtLayout>
-        <Button>АНАТОЛИЙ ЧУБАЙС, ЛОЛ</Button>
+        <NuxtPage />
     </NuxtLayout>
 </template>

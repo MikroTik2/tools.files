@@ -32,8 +32,16 @@
         --destructive-foreground: 0 0% 98%;
 
         --ring: 240 10% 3.9%;
-
         --radius: 0.5rem;
+
+        --aurora: repeating-linear-gradient(
+            100deg,
+            var(--blue-500) 10%,
+            var(--indigo-300) 15%,
+            var(--blue-300) 20%,
+            var(--violet-200) 25%,
+            var(--blue-400) 30%
+        );
     }
 
     .dark {

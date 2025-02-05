@@ -6,6 +6,14 @@ module.exports = {
     safelist: ['dark'],
     prefix: '',
 
+    content: [
+        './components/**/*.vue',
+        './layouts/**/*.vue',
+        './modules/**/*.vue',
+        './pages/**/*.vue',
+        './nuxt.config.ts',
+    ],
+
     theme: {
         container: {
             center: true,
