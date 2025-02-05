@@ -18,39 +18,19 @@ interface IProps {
 
 const components: IProps[] = [
     {
-        title: 'Alert Dialog',
+        title: 'File Compression',
+        description: 'Reduce the size of images, videos, and documents without losing quality using advanced compression algorithms.',
         href: '/',
-        description:
-            'A modal dialog that interrupts the user with important content and expects a response.',
     },
     {
-        title: 'Hover Card',
+        title: 'GIF Formatting',
+        description: 'Edit, resize, crop, and optimize GIF animations to make them lighter, smoother, and more efficient for web and social media.',
         href: '/',
-        description:
-            'For sighted users to preview content available behind a link.',
     },
     {
-        title: 'Progress',
+        title: 'Video Conversion',
+        description: 'Convert videos to different formats, extract audio, or create GIF animations from video clips.',
         href: '/',
-        description:
-            'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
-    },
-    {
-        title: 'Scroll-area',
-        href: '/',
-        description: 'Visually or semantically separates content.',
-    },
-    {
-        title: 'Tabs',
-        href: '/docs/components/tabs',
-        description:
-            'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
-    },
-    {
-        title: 'Tooltip',
-        href: '/docs/components/tooltip',
-        description:
-        'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
     },
 ];
 </script>
@@ -91,52 +71,6 @@ const components: IProps[] = [
                                             </NavigationMenuLink>
                                         </li>
 
-                                        <li>
-                                            <NavigationMenuLink as-child>
-                                                <a
-                                                    href="/docs/introduction"
-                                                    class="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                                                >
-                                                    <div class="text-sm font-medium leading-none">Introduction</div>
-                                                    <p class="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                                        Re-usable components built using Radix UI and Tailwind CSS.
-                                                    </p>
-                                                </a>
-                                            </NavigationMenuLink>
-                                        </li>
-                                        <li>
-                                            <NavigationMenuLink as-child>
-                                                <a
-                                                    href="/docs/installation"
-                                                    class="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                                                >
-                                                    <div class="text-sm font-medium leading-none">Installation</div>
-                                                    <p class="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                                        How to install dependencies and structure your app.
-                                                    </p>
-                                                </a>
-                                            </NavigationMenuLink>
-                                        </li>
-                                        <li>
-                                            <NavigationMenuLink as-child>
-                                                <a
-                                                    href="/docs/typography"
-                                                    class="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                                                >
-                                                    <div class="text-sm font-medium leading-none">Typography</div>
-                                                    <p class="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                                        Styles for headings, paragraphs, lists...etc
-                                                    </p>
-                                                </a>
-                                            </NavigationMenuLink>
-                                        </li>
-                                    </ul>
-                                </NavigationMenuContent>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
-                                <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-                                <NavigationMenuContent>
-                                    <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                                         <li v-for="component in components" :key="component.title">
                                             <NavigationMenuLink as-child>
                                                 <a
@@ -155,16 +89,23 @@ const components: IProps[] = [
                             </NavigationMenuItem>
                             <NavigationMenuItem>
                                 <NuxtLink :class="cn(navigationMenuTriggerStyle())" to="/">
-                                    Documentation
+                                    About
+                                </NuxtLink>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <NuxtLink :class="cn(navigationMenuTriggerStyle())" to="/">
+                                    Features
                                 </NuxtLink>
                             </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>
 
                     <div class="lg:hidden flex items-center">
-                        <Button variant="ghost" size="icon">
-                            <LucideMenu class="!size-[18px]" />
-                        </Button>
+                        <MobileNavigation>
+                            <Button variant="ghost" size="icon">
+                                <LucideMenu class="!size-[18px]" />
+                            </Button>
+                        </MobileNavigation>
                     </div>
 
                     <div class="flex items-center justify-end">
