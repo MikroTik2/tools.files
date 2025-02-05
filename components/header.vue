@@ -42,12 +42,12 @@ const components: IProps[] = [
                 <div class="grid grid-cols-2 lg:grid-cols-3">
                     <div class="flex items-center max-lg:hidden">
                         <a href="/" title="Navigation home" class="flex">
-                            <img class="w-7" src="/assets/icons/logo.png" alt="Logo Icon">
+                            <img class="w-7" src="../assets/icons/logo.png" alt="Logo Icon">
                             <span class="ml-3 self-center font-bold">Tools Files</span>
                         </a>
                     </div>
 
-                    <NavigationMenu class="lg:flex hidden">
+                    <NavigationMenu class="lg:flex mx-auto hidden">
                         <NavigationMenuList>
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
