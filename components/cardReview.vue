@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 interface Props {
     img?: string;
-    name: string;
-    username: string;
-    body: string;
+    name?: string;
+    username?: string;
+    body?: string;
 }
 
 const props = defineProps<Props>();
@@ -15,7 +15,7 @@ const props = defineProps<Props>();
     >
         <div class="flex flex-row h-full items-center gap-2">
             <div class="flex relative h-auto flex-col">
-                <img class="w-[300px] object-cover h-[240px]" :src="props.img" alt="gif">
+                <img loading="lazy" class="w-[300px] object-cover h-[240px]" :src="props.img" alt="gif">
             </div>
         </div>
     </div>

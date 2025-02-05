@@ -31,7 +31,7 @@ const features = ref<ICard[]>([
 </script>
 
 <template>
-    <section id="services" class="relative" aria-labelledby="services">
+    <section id="services" class="relative">
         <Container>
             <div class="flex flex-col items-center justify-center">
                 <h2 class="pb-12 text-5xl font-semibold">

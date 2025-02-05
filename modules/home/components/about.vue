@@ -7,7 +7,7 @@ import {
 </script>
 
 <template>
-    <section id="about" class="relative" aria-labelledby="about">
+    <section id="about" class="relative">
         <Container>
             <div class="my-16 mt-24">
                 <Card class="max-w-full dark:border-zinc-800 dark:bg-zinc-900/50 overflow-hidden">

@@ -17,7 +17,6 @@ const props = withDefaults(defineProps<IAuroraBackgroundProps>(), {
         :is="props.tag"
         v-bind="props"
         id="hero"
-        aria-labelledby="hero-heading"
         :class="cn('relative flex flex-col h-[100vh] items-center justify-center text-slate-950 transition-bg', props.class)"
     >
         <div class="absolute inset-0 overflow-hidden">

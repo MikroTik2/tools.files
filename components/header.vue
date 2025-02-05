@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { buttonVariants } from '@/components/ui/button';
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -41,16 +42,16 @@ const components: IProps[] = [
             <div class="w-full p-2">
                 <div class="grid grid-cols-2 lg:grid-cols-3">
                     <div class="flex items-center max-lg:hidden">
-                        <a href="/" title="Navigation home" class="flex">
-                            <img class="w-7" src="../assets/icons/logo.png" alt="Logo Icon">
+                        <NuxtLink to="/" title="Navigation home" class="flex">
+                            <img width="28" height="31" src="../assets/icons/logo.png" alt="Logo Icon">
                             <span class="ml-3 self-center font-bold">Tools Files</span>
-                        </a>
+                        </NuxtLink>
                     </div>
 
                     <NavigationMenu class="lg:flex mx-auto hidden">
                         <NavigationMenuList>
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+                                <NavigationMenuTrigger>Services</NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <ul class="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[minmax(0,.75fr)_minmax(0,1fr)]">
                                         <li class="row-span-3">
@@ -88,12 +89,12 @@ const components: IProps[] = [
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NuxtLink :class="cn(navigationMenuTriggerStyle())" to="/">
+                                <NuxtLink :class="cn(navigationMenuTriggerStyle())" :to="{ hash: '#about' }">
                                     About
                                 </NuxtLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NuxtLink :class="cn(navigationMenuTriggerStyle())" to="/">
+                                <NuxtLink :class="cn(navigationMenuTriggerStyle())" :to="{ hash: '#features', path: '/' }">
                                     Features
                                 </NuxtLink>
                             </NavigationMenuItem>
@@ -102,16 +103,17 @@ const components: IProps[] = [
 
                     <div class="lg:hidden flex items-center">
                         <MobileNavigation>
-                            <Button variant="ghost" size="icon">
+                            <Button id="menu" variant="ghost" size="icon">
                                 <LucideMenu class="!size-[18px]" />
+                                <span class="hidden">menu</span>
                             </Button>
                         </MobileNavigation>
                     </div>
 
                     <div class="flex items-center justify-end">
-                        <Button variant="ghost" size="icon">
+                        <a id="github" title="GitHub" href="https://github.com/MikroTik2/tools.files" :class="cn(buttonVariants({ variant: 'ghost' }))" rel="noopener noreferrer" target="_blank" variant="ghost" size="icon">
                             <LucideGithub class="!size-[18px]" />
-                        </Button>
+                        </a>
                     </div>
                 </div>
             </div>

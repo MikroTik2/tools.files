@@ -5,63 +5,33 @@ import { cn } from '@/lib/utils';
 // Reviews data
 const reviews = [
     {
-        name: 'Jack',
-        username: '@jack',
-        body: 'I\'ve never seen anything like this before. It\'s amazing. I love it.',
         img: '../../..//public/gif1.gif',
     },
     {
-        name: 'Jill',
-        username: '@jill',
-        body: 'I don\'t know what to say. I\'m speechless. This is amazing.',
         img: '../../..//public/gif2.gif',
     },
     {
-        name: 'John',
-        username: '@john',
-        body: 'I\'m at a loss for words. This is amazing. I love it.',
         img: '../../..//public/gif3.gif',
     },
     {
-        name: 'Jane',
-        username: '@jane',
-        body: 'I\'m at a loss for words. This is amazing. I love it.',
         img: '../../..//public/gif4.gif',
     },
     {
-        name: 'Jenny',
-        username: '@jenny',
-        body: 'I\'m at a loss for words. This is amazing. I love it.',
         img: '../../..//public/gif5.gif',
     },
     {
-        name: 'James',
-        username: '@james',
-        body: 'I\'m at a loss for words. This is amazing. I love it.',
         img: '../../..//public/gif3.gif',
     },
     {
-        name: 'James',
-        username: '@james',
-        body: 'I\'m at a loss for words. This is amazing. I love it.',
         img: '../../..//public/gif6.gif',
     },
     {
-        name: 'James',
-        username: '@james',
-        body: 'I\'m at a loss for words. This is amazing. I love it.',
         img: '../../..//public/gif7.gif',
     },
     {
-        name: 'James',
-        username: '@james',
-        body: 'I\'m at a loss for words. This is amazing. I love it.',
         img: '../../..//public/gif8.gif',
     },
     {
-        name: 'James',
-        username: '@james',
-        body: 'I\'m at a loss for words. This is amazing. I love it.',
         img: '../../..//public/gif9.gif',
     },
 ];
@@ -72,21 +42,21 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
 </script>
 
 <template>
-    <section id="features" class="relative py-12" aria-labelledby="features">
+    <section id="reviews" class="relative py-12">
         <Container>
             <div
                 class="relative h-[430px] w-full overflow-hidden rounded-xl border bg-white shadow-lg dark:bg-background"
             >
                 <div class="absolute left-1/2 top-8 z-20 mt-4 -translate-x-1/2 rounded-3xl border bg-white/30 p-3 backdrop-blur-md">
-                    <img class="w-[70px] object-contain h-[70px]" src="../../../assets/icons/logo.png" alt="logo">
+                    <img width="70" height="70" class="object-contain" src="../../../assets/icons/logo.png" alt="logo">
                 </div>
 
                 <div class="absolute inset-0 z-10 mt-20 flex flex-col items-center justify-center px-4 text-center">
                     <h3 class="mb-2 text-4xl font-bold sm:text-5xl">
-                        What are you waiting for?
+                        Convert your video to GIF!
                     </h3>
                     <p class="m-4 text-base sm:text-lg">
-                        Get started and start building awesome UI
+                        Upload your video and get a high-quality GIF in seconds.
                     </p>
                     <a :class="cn(buttonVariants())" href="/">
                         Get Started
@@ -101,12 +71,9 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
                         style="transform: translateY(-11.5rem) rotate(-16deg);"
                     >
                         <CardReview
-                            v-for="review in firstRow"
-                            :key="review.username"
+                            v-for="(review, i) in firstRow"
+                            :key="i"
                             :img="review.img"
-                            :name="review.name"
-                            :username="review.username"
-                            :body="review.body"
                         />
                     </Marquee>
 
@@ -118,12 +85,9 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
                         style="transform: translateY(1rem) rotate(-16deg);"
                     >
                         <CardReview
-                            v-for="review in secondRow"
-                            :key="review.username"
+                            v-for="(review, i) in secondRow"
+                            :key="i"
                             :img="review.img"
-                            :name="review.name"
-                            :username="review.username"
-                            :body="review.body"
                         />
                     </Marquee>
 
@@ -134,12 +98,9 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
                         style="transform: translateY(13.5rem) rotate(-16deg);"
                     >
                         <CardReview
-                            v-for="review in firstRow"
-                            :key="review.username"
+                            v-for="(review, i) in firstRow"
+                            :key="i"
                             :img="review.img"
-                            :name="review.name"
-                            :username="review.username"
-                            :body="review.body"
                         />
                     </Marquee>
 
@@ -151,12 +112,9 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
                         style="transform: translateY(26rem) rotate(-16deg);"
                     >
                         <CardReview
-                            v-for="review in secondRow"
-                            :key="review.username"
+                            v-for="(review, i) in secondRow"
+                            :key="i"
                             :img="review.img"
-                            :name="review.name"
-                            :username="review.username"
-                            :body="review.body"
                         />
                     </Marquee>
 

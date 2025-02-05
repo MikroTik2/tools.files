@@ -28,10 +28,10 @@ import { Motion } from 'motion-v';
             </p>
 
             <div class="flex gap-3 items-center">
-                <Button>
+                <Button id="upload">
                     <span>Upload files</span>
                 </Button>
-                <Button variant="outline">
+                <Button id="read" variant="outline">
                     <span>Read More</span>
                 </Button>
             </div>

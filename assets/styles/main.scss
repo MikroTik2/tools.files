@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .aurora-background-gradient-after {
     @apply after:content-[""]
           after:absolute

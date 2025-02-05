@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     compatibilityDate: '2024-11-01',
+    ssr: true,
     modules: [
         ['@nuxtjs/tailwindcss', { viewer: false }],
         '~/modules/home',
@@ -9,10 +10,19 @@ export default defineNuxtConfig({
         'shadcn-nuxt',
         '@nuxt/eslint',
     ],
+
+    nitro: {
+        compressPublicAssets: true,
+        minify: true,
+    },
+
     devtools: { enabled: false },
 
     app: {
         head: {
+            htmlAttrs: {
+                lang: 'en',
+            },
             bodyAttrs: {
                 class: 'dark',
             },
