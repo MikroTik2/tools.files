@@ -8,4 +8,5 @@ useHead({
     <Hero />
     <About />
     <Features />
+    <Reviews />
 </template>
