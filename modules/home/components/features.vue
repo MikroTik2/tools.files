@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Component } from 'vue';
+import { LucideClock, LucideDatabase, LucideFile, LucideFolder, LucideScissors, LucideSettings } from '#components';
 import { ref } from 'vue';
 
 interface ICard {

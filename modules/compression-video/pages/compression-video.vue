@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// import Toaster from '@/components/ui/toast/Toaster.vue';
-
 useHead({
     title: 'Compress video',
     meta: [
@@ -11,7 +9,6 @@ useHead({
 
         { property: 'og:title', content: 'File Compression - Easily Compress Files Online' },
         { property: 'og:description', content: 'Quickly compress videos without losing quality. Supports images, videos, and documents.' },
-        // { property: 'og:image', content: 'http://localhost:3000/og-image-compression.jpg' },
         { property: 'og:url', content: 'http://localhost:3000/compression' },
         { property: 'og:type', content: 'website' },
 
@@ -28,5 +25,4 @@ useHead({
 
 <template>
     <Upload />
-    <!-- <Toaster /> -->
 </template>
