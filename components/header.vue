@@ -111,7 +111,7 @@ const components: IProps[] = [
                     </div>
 
                     <div class="flex items-center justify-end">
-                        <a id="github" title="GitHub" href="https://github.com/MikroTik2/tools.files" :class="cn(buttonVariants({ variant: 'ghost' }))" rel="noopener noreferrer" target="_blank" variant="ghost" size="icon">
+                        <a id="github" title="GitHub" href="https://github.com/MikroTik2/tools.files" :class="cn(buttonVariants({ variant: 'ghost', size: 'icon' }))" rel="noopener noreferrer" target="_blank" variant="ghost" size="icon">
                             <LucideGithub class="!size-[18px]" />
                         </a>
                     </div>

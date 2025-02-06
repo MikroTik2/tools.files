@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     modules: [
         ['@nuxtjs/tailwindcss', { viewer: false }],
         '~/modules/home',
+        '~/modules/compression-video',
         '@nuxtjs/color-mode',
         'nuxt-lucide-icons',
         'shadcn-nuxt',

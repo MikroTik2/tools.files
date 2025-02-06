@@ -48,7 +48,7 @@ const secondRow = ref(reviews.slice(reviews.length / 2));
                 class="relative h-[430px] w-full overflow-hidden rounded-xl border bg-white shadow-lg dark:bg-background"
             >
                 <div class="absolute left-1/2 top-8 z-20 mt-4 -translate-x-1/2 rounded-3xl border bg-white/30 p-3 backdrop-blur-md">
-                    <img width="70" height="70" class="object-contain" src="../../../assets/icons/logo.png" alt="logo">
+                    <img width="70" height="70" class="object-contain w-[70px] h-[70px]" src="../../../assets/icons/logo.png" alt="logo">
                 </div>
 
                 <div class="absolute inset-0 z-10 mt-20 flex flex-col items-center justify-center px-4 text-center">

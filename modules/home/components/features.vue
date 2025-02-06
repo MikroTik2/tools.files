@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Component } from 'vue';
-import { LucideActivity, LucideCode, LucideMoon, LucideSliders, LucideWind, LucideZap } from '#components';
 import { ref } from 'vue';
 
 interface ICard {
@@ -11,34 +10,34 @@ interface ICard {
 
 const features = ref<ICard[]>([
     {
-        icon: LucideCode,
-        title: 'Vue and Nuxt Native',
-        description: 'Build apps that integrate seamlessly with Vue.js and Nuxt.js, leveraging their full potential for a modern development experience.',
+        icon: LucideFile,
+        title: 'Support for Multiple Formats',
+        description: 'Compress files of various formats, including images, videos, audio, and documents.',
     },
     {
-        icon: LucideSliders,
-        title: 'Customizable Components',
-        description: 'Every component is designed to be flexible and adaptable to your design system, allowing complete customization with ease.',
+        icon: LucideScissors,
+        title: 'Efficient Compression',
+        description: 'Use advanced algorithms to reduce file sizes without significant quality loss.',
     },
     {
-        icon: LucideWind,
-        title: 'Tailwind CSS Support',
-        description: 'Utility-first styling made easy with built-in Tailwind CSS support, speeding up your development process.',
+        icon: LucideFolder,
+        title: 'Batch Processing',
+        description: 'Compress multiple files at once, saving time and resources.',
     },
     {
-        icon: LucideMoon,
-        title: 'Dark Mode Ready',
-        description: 'Enable beautiful dark mode designs effortlessly, with fully adaptive components that respond to user preferences.',
+        icon: LucideClock,
+        title: 'Fast Execution',
+        description: 'High-speed file processing without delays and waiting.',
     },
     {
-        icon: LucideZap,
-        title: 'Performant and Lightweight',
-        description: 'Optimized for speed, Inspira UI’s components ensure fast loading times and a smooth user experience across all devices.',
+        icon: LucideDatabase,
+        title: 'Space Optimization',
+        description: 'Optimize storage by freeing up valuable disk space.',
     },
     {
-        icon: LucideActivity,
-        title: 'Built-in Motion and Animations',
-        description: 'Add life to your UI with smooth transitions powered by motion-v, no need for external animation libraries.',
+        icon: LucideSettings,
+        title: 'Flexible Settings',
+        description: 'Customize compression parameters to balance quality and file size.',
     },
 ]);
 </script>

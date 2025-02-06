@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Component } from 'vue';
-import { LucideActivity, LucideCode, LucideWind } from '#components';
+import { LucideFileArchive, LucideFileImage, LucideFilePen, LucideFileVideo } from '#components';
 import { buttonVariants } from '@/components/ui/button/index';
 import { cn } from '@/lib/utils';
 import { ref } from 'vue';
@@ -8,24 +8,53 @@ import { ref } from 'vue';
 interface ICard {
     title: string;
     description: string;
+    link: string;
+    disabled: boolean;
     icon: Component;
 };
 
 const features = ref<ICard[]>([
     {
-        icon: LucideCode,
-        title: 'File Compression',
-        description: 'Reduce the size of images, videos, and documents without losing quality using advanced compression algorithms.',
+        icon: LucideFileVideo,
+        title: 'Compress video',
+        link: '/compression-video',
+        disabled: false,
+        description: 'Reduce the size of videos, and documents without losing quality using advanced compression algorithms.',
     },
     {
-        icon: LucideWind,
-        title: 'GIF Formatting',
-        description: 'Edit, resize, crop, and optimize GIF animations to make them lighter, smoother, and more efficient for web and social media.',
+        icon: LucideFilePen,
+        title: 'Compress PDF',
+        link: '/',
+        disabled: true,
+        description: 'Use this online PDF compressor to reduce the file size of your PDF documents. Make PDFs smaller to send them via e-mail or upload.',
     },
     {
-        icon: LucideActivity,
-        title: 'Video Conversion',
-        description: 'Convert videos to different formats, extract audio, or create GIF animations from video clips.',
+        icon: LucideFileImage,
+        title: 'Compress PNG',
+        link: '/',
+        disabled: true,
+        description: 'Reduce image file size by using PNG compression - online & for free. Make images smaller by converting to PNG.',
+    },
+    {
+        icon: LucideFileImage,
+        title: 'Compress JPG',
+        link: '/',
+        disabled: true,
+        description: 'This image resizer uses JPG compression to make image files smaller. Convert to JPG and profit from this JPG compression online.',
+    },
+    {
+        icon: LucideFileImage,
+        title: 'Compress images',
+        link: '/',
+        disabled: true,
+        description: 'Reduce the file size of your images with online image compression. Compress image files quickly without software installation.',
+    },
+    {
+        icon: LucideFileArchive,
+        title: 'Create ZIP file',
+        link: '/',
+        disabled: true,
+        description: 'With this online ZIP converter you can compress your files and create a ZIP archive. Reduce file size and save bandwidth.',
     },
 ]);
 </script>
@@ -54,8 +83,8 @@ const features = ref<ICard[]>([
                         {{ element.description }}
                     </p>
 
-                    <NuxtLink class="z-50 cursor-pointer" :class="cn(buttonVariants())">
-                        Get Started
+                    <NuxtLink :to="element.link" class="z-50 cursor-pointer" :class="cn(buttonVariants(), { 'pointer-events-none opacity-50': element.disabled })">
+                        {{ element.disabled ? 'Coming' : 'Get Started' }}
                     </NuxtLink>
                 </CardSpotlight>
             </div>
