@@ -1,12 +1,12 @@
 <script setup lang="ts">
 interface Step {
-    text: string; // Display text for the step
-    afterText?: string; // Text to show after step completion
-    async?: boolean; // If true, waits for external trigger to proceed
-    duration?: number; // Duration in ms before proceeding (default: 2000)
-    action?: () => void; // Function to execute when step is active
+    text: string;
+    afterText?: string;
+    async?: boolean;
+    duration?: number;
+    action?: () => void;
 }
-// State management
+
 const loaderStates = reactive({
     isProcessing: false,
     isCompressing: false,
@@ -25,7 +25,6 @@ const uiState = reactive({
     },
 });
 
-// Async loading steps configuration
 const asyncLoadingSteps = computed<Step[]>(() => [
     {
         text: 'Preparing Algorithm',
@@ -54,7 +53,6 @@ const asyncLoadingSteps = computed<Step[]>(() => [
     },
 ]);
 
-// Event handlers
 function handleStateChange(_state: number) {
     // Handle Loading State Change
 }
@@ -62,6 +60,7 @@ function handleStateChange(_state: number) {
 function handleComplete() {
     // Handle Loading Complete
 }
+
 /* eslint-disable no-alert */
 function handleAsyncLoadingComplete() {
     alert('Async file compression complete, redirecting...');
@@ -69,7 +68,6 @@ function handleAsyncLoadingComplete() {
 }
 
 async function startAsyncLoading() {
-    // Reset states
     uiState.isAfterTextLoading = true;
     loaderStates.isProcessing = true;
     loaderStates.isCompressing = true;
@@ -89,8 +87,7 @@ async function startAsyncLoading() {
         await simulateAsyncStep('isCompressing', 3000);
         await simulateAsyncStep('isVerifyingData', 2500);
     }
-
-    catch (error) {
+    catch {
         uiState.isAfterTextLoading = false;
     }
 }

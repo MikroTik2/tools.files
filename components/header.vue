@@ -89,7 +89,7 @@ const components: IProps[] = [
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NuxtLink :class="cn(navigationMenuTriggerStyle())" :to="{ hash: '#about' }">
+                                <NuxtLink :class="cn(navigationMenuTriggerStyle())" :to="{ hash: '#about', path: '/' }">
                                     About
                                 </NuxtLink>
                             </NavigationMenuItem>
