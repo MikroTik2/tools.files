@@ -5,34 +5,34 @@ import { cn } from '@/lib/utils';
 // Reviews data
 const reviews = [
     {
-        img: '../../..//public/gif1.gif',
+        img: '../../..//public/gifs/gif1.gif',
     },
     {
-        img: '../../..//public/gif2.gif',
+        img: '../../..//public/gifs/gif2.gif',
     },
     {
-        img: '../../..//public/gif3.gif',
+        img: '../../..//public/gifs/gif3.gif',
     },
     {
-        img: '../../..//public/gif4.gif',
+        img: '../../..//public/gifs/gif4.gif',
     },
     {
-        img: '../../..//public/gif5.gif',
+        img: '../../..//public/gifs/gif5.gif',
     },
     {
-        img: '../../..//public/gif3.gif',
+        img: '../../..//public/gifs/gif3.gif',
     },
     {
-        img: '../../..//public/gif6.gif',
+        img: '../../..//public/gifs/gif6.gif',
     },
     {
-        img: '../../..//public/gif7.gif',
+        img: '../../..//public/gifs/gif7.gif',
     },
     {
-        img: '../../..//public/gif8.gif',
+        img: '../../..//public/gifs/gif8.gif',
     },
     {
-        img: '../../..//public/gif9.gif',
+        img: '../../..//public/gifs/gif9.gif',
     },
 ];
 
