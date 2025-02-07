@@ -9,7 +9,6 @@ useHead({
 
         { property: 'og:title', content: 'Tools Files - File Compression Made Simple' },
         { property: 'og:description', content: 'Quickly compress and format files without losing quality. Reduce file sizes easily with our online tool.' },
-        // { property: 'og:image', content: 'http://localhost:3000/og-image.jpg' },
         { property: 'og:url', content: 'http://localhost:3000' },
         { property: 'og:type', content: 'website' },
 
