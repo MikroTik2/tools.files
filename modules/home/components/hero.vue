@@ -11,7 +11,7 @@ import { Motion } from 'motion-v';
             :in-view="{ opacity: 1, y: 0, filter: 'blur(0px)' }"
             :transition="{ delay: 0.3, duration: 0.8, ease: 'easeInOut' }"
         >
-            <div class="flex flex-col h-full items-center justify-center">
+            <div class="flex flex-col h-full items-center justify-center max-md:hidden">
                 <ParticleImage
                     image-src="/images/particle.png"
                     :responsive-width="true"
