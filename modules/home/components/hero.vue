@@ -23,6 +23,7 @@ const isVisible = computed(() => width.value >= 768);
                     />
                 </div>
             </ClientOnly>
+
             <NuxtLink to="/" class="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm font-medium hover:cursor-pointer md:hidden">
                 <LucideRocket class="!h-[16px] !w-[16px]" />
 
