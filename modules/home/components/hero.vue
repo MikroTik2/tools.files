@@ -13,7 +13,7 @@ import { Motion } from 'motion-v';
         >
             <div class="flex flex-col h-full items-center justify-center">
                 <ParticleImage
-                    image-src="../../..//public/images/particle.png"
+                    image-src="/images/particle.png"
                     :responsive-width="true"
                 />
             </div>
