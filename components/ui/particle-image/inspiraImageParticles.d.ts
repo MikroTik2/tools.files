@@ -1,10 +1,3 @@
-/**
- * Type definitions for inspiraImageParticles
- */
-
-/**
- * Options for initializing the InspiraImageParticle class.
- */
 interface InspiraImageParticleOptions {
     width?: number;
     height?: number;
@@ -46,21 +39,14 @@ interface InspiraImageParticleOptions {
     responsiveWidth?: boolean;
 }
 
-/**
- * Interface for event handling methods.
- */
 export interface EventHandlers {
     on: (event: string, callback: (params?: unknow) => void) => void;
-    emit: (event: string, params?: unknow) => void;
+    emit: (event: string, params?: unknown) => void;
 }
 
-/**
- * InspiraImageParticle class for creating particle animations from images.
- */
 export declare class InspiraImageParticle implements EventHandlers {
     constructor(options?: InspiraImageParticleOptions);
 
-    // Public Properties
     state: string;
     touches: Array<{ x: number; y: number; z: number; force: number }>;
     colorArr: number[];
@@ -115,14 +101,12 @@ export declare class InspiraImageParticle implements EventHandlers {
     renderer: 'default' | 'webgl';
     color: string;
 
-    // Public Methods
     on(event: string, fn: (params?: unknow) => void): void;
     emit(event: string, params?: unknow): void;
 
     start(options?: Partial<InspiraImageParticleOptions>): void;
     stop(options?: Partial<InspiraImageParticleOptions>): void;
 
-    // Private Methods
     private _animate(): void;
     private _onImageLoaded(options: InspiraImageParticleOptions): void;
     private _initImage(options: InspiraImageParticleOptions): void;
@@ -143,16 +127,12 @@ export declare class InspiraImageParticle implements EventHandlers {
     private _fadeOriginDirection(particle: unknow): void;
     private _parseColor(str: string): number[] | undefined;
 
-    // Private Getters
     private get _mouseHandler(): (e: MouseEvent) => void;
     private get _clickHandler(): (e: MouseEvent) => void;
     private get _touchHandler(): (e: TouchEvent) => void;
     private get _clearTouches(): (e: Event) => void;
 }
 
-/**
- * Initializes the InspiraImageParticle module and returns the class.
- */
 export declare const inspiraImageParticles: () => {
     InspiraImageParticle: typeof InspiraImageParticle;
 };
