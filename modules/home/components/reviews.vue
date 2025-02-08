@@ -5,34 +5,34 @@ import { cn } from '@/lib/utils';
 // Reviews data
 const reviews = [
     {
-        img: '../../..//public/gifs/gif1.gif',
+        img: '/gifs/gif1.gif',
     },
     {
-        img: '../../..//public/gifs/gif2.gif',
+        img: '/gifs/gif2.gif',
     },
     {
-        img: '../../..//public/gifs/gif3.gif',
+        img: '/gifs/gif3.gif',
     },
     {
-        img: '../../..//public/gifs/gif4.gif',
+        img: '/gifs/gif4.gif',
     },
     {
-        img: '../../..//public/gifs/gif5.gif',
+        img: '/gifs/gif5.gif',
     },
     {
-        img: '../../..//public/gifs/gif3.gif',
+        img: '/gifs/gif3.gif',
     },
     {
-        img: '../../..//public/gifs/gif6.gif',
+        img: '/gifs/gif6.gif',
     },
     {
-        img: '../../..//public/gifs/gif7.gif',
+        img: '/gifs/gif7.gif',
     },
     {
-        img: '../../..//public/gifs/gif8.gif',
+        img: '/gifs/gif8.gif',
     },
     {
-        img: '../../..//public/gifs/gif9.gif',
+        img: '/gifs/gif9.gif',
     },
 ];
 
