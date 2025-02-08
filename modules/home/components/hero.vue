@@ -11,14 +11,20 @@ import { Motion } from 'motion-v';
             :in-view="{ opacity: 1, y: 0, filter: 'blur(0px)' }"
             :transition="{ delay: 0.3, duration: 0.8, ease: 'easeInOut' }"
         >
-            <NuxtLink to="/" class="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm font-medium hover:cursor-pointer">
+            <div class="flex flex-col h-full items-center justify-center">
+                <ParticleImage
+                    image-src="../../..//public/particle.png"
+                    :responsive-width="true"
+                />
+            </div>
+            <!-- <NuxtLink to="/" class="inline-flex items-center rounded-full bg-muted px-4 py-1.5 text-sm font-medium hover:cursor-pointer">
                 <LucideRocket class="!h-[16px] !w-[16px]" />
 
                 <Separator orientation="vertical" class="shrink-0 bg-border w-px mx-2 h-4 dark:bg-gray-600" />
 
                 <span class="underline-offset-4 hover:underline">Get Started</span>
                 <LucideArrowRight class="!h-[16px] !w-[16px] ml-1" />
-            </NuxtLink>
+            </NuxtLink> -->
 
             <h1 class="text-center text-3xl font-bold md:text-7xl dark:text-white">
                 File Compression Made Simple.
