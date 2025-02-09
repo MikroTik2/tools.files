@@ -2,7 +2,10 @@
 
 <p align="center"><img src="https://github.com/vladislav2251/tools.files/raw/master/public/images/docs.png" alt="project-image"></p>
 
-<p id="description">Nuxt3 | Shadcn | TailwindCSS | InspiraUI | File-comression app using ffmpeg scripts</p>
+<p id="description">Our service provides a convenient and fast way to compress 
+files without quality loss.
+Using powerful FFmpeg-based compression algorithms, we ensure minimal file size
+while preserving their original resolution and clarity. </p>
 
 <h2>🚀 Demo</h2>
 
