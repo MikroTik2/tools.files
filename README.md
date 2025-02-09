@@ -1,7 +1,6 @@
 [![LinkedIn](https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff)](https://www.linkedin.com/in/artur-dotsent-0a3a722a1/)
 
 
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -22,8 +21,6 @@
     <a href="https://www.linkedin.com/in/artur-dotsent-0a3a722a1/">Request Feature</a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -54,15 +51,10 @@
 
 Our service provides a convenient and fast way to compress files without quality loss. Using powerful FFmpeg-based compression algorithms, we ensure minimal file size while preserving their original resolution and clarity. 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 ### Built With
 
 * [![Nuxt](https://img.shields.io/badge/Nuxt-002E3B?logo=nuxt&logoColor=#00DC82)](#)
 * [![TailwindCSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?logo=tailwind-css&logoColor=white)](#)
-  
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -93,24 +85,18 @@ This is an example of how to list things you need to use the software and how to
    git remote set-url origin github_username/repo_name
    git remote -v # confirm the changes
    ```
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- LICENSE -->
 ## License
 
 Distributed under the CC BY
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- CONTACT -->
 ## Contact
 
 Artur - [@MikroTik2](https://www.linkedin.com/in/artur-dotsent-0a3a722a1/)</br>
-Vlad - [@vladislav2251](https://www.linkedin.com/in/vlad-didyk-2842a8269/) 
-Project Link: [https://github.com/MikroTik2/tools.files](https://github.com/MikroTik2/tools.files)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Vlad - [@vladislav2251](https://www.linkedin.com/in/vlad-didyk-2842a8269/) </br>
+Project Link: [https://github.com/MikroTik2/tools.files](https://github.com/MikroTik2/tools.files)</br>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [Nuxt-url]: https://nuxt.com/
