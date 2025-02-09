@@ -1,9 +1,26 @@
-## About
-Our service provides a convenient and fast way to compress files without quality loss. Using powerful FFmpeg-based compression algorithms, we ensure minimal file size while preserving their original resolution and clarity. 
+<h1 align="center" id="title">Tools Files</h1>
 
-![Описание изображения](public/images/docs.png)
+<p align="center"><img src="https://github.com/vladislav2251/tools.files/raw/master/public/images/docs.png" alt="project-image"></p>
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+<p id="description">Nuxt3 | Shadcn | TailwindCSS | InspiraUI | File-comression app using ffmpeg scripts</p>
+
+<h2>🚀 Demo</h2>
+
+[tools-files.vercel.app/](tools-files.vercel.app/)
+
+  
+  
+<h2>🧐 Features</h2>
+
+Here're some of the project's best features:
+
+*   Support for Multiple Formats
+*   Efficient Compression
+*   Batch Processing
+*   Fast Execution
+*   Space Optimization
+*   Flexible Settings
+
 
 ## Setup
 
@@ -74,5 +91,15 @@ yarn preview
 # bun
 bun run preview
 ```
+  
+<h2>💻 Built with</h2>
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Technologies used in the project:
+
+*   Nuxt3
+*   TailwindCSS
+*   TypeScript
+
+<h2>🛡️ License:</h2>
+
+This project is licensed under the CC BY
