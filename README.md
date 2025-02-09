@@ -24,6 +24,17 @@ Here're some of the project's best features:
 *   Space Optimization
 *   Flexible Settings
 
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+*   Nuxt3
+*   TailwindCSS
+*   TypeScript
+
+<h2>🛡️ License:</h2>
+
+This project is licensed under the CC BY
 
 ## Setup
 
@@ -95,14 +106,3 @@ yarn preview
 bun run preview
 ```
   
-<h2>💻 Built with</h2>
-
-Technologies used in the project:
-
-*   Nuxt3
-*   TailwindCSS
-*   TypeScript
-
-<h2>🛡️ License:</h2>
-
-This project is licensed under the CC BY
