@@ -1,108 +1,104 @@
-<h1 align="center" id="title">Tools Files</h1>
+[![LinkedIn](https://custom-icon-badges.demolab.com/badge/LinkedIn-0A66C2?logo=linkedin-white&logoColor=fff)](https://www.linkedin.com/in/artur-dotsent-0a3a722a1/)
+
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/MikroTik2/tools.files">
+    <img src="./public/images/particle.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">Tools Files</h3>
+
+  <p align="center">
+    Nuxt3 | Shadcn | TailwindCSS | InspiraUI | File-comression app using ffmpeg scripts 
+    <br />
+    <br />
+    <a href="https://tools-files.vercel.app">View Demo</a>
+    &middot;
+    <a href="https://www.linkedin.com/in/artur-dotsent-0a3a722a1/">Report Bug</a>
+    &middot;
+    <a href="https://www.linkedin.com/in/artur-dotsent-0a3a722a1/">Request Feature</a>
+  </p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
 <p align="center"><img src="https://github.com/vladislav2251/tools.files/raw/master/public/images/docs.png" alt="project-image"></p>
 
-<p id="description">Our service provides a convenient and fast way to compress 
-files without quality loss.
-Using powerful FFmpeg-based compression algorithms, we ensure minimal file size
-while preserving their original resolution and clarity. </p>
+Our service provides a convenient and fast way to compress files without quality loss. Using powerful FFmpeg-based compression algorithms, we ensure minimal file size while preserving their original resolution and clarity. 
 
-<h2>🚀 Demo</h2>
+### Built With
 
-[Click Me!](tools-files.vercel.app/)
+* [![Nuxt](https://img.shields.io/badge/Nuxt-002E3B?logo=nuxt&logoColor=#00DC82)](#)
+* [![TailwindCSS](https://img.shields.io/badge/Tailwind%20CSS-%2338B2AC.svg?logo=tailwind-css&logoColor=white)](#)
 
-  
-  
-<h2>🧐 Features</h2>
+<!-- GETTING STARTED -->
+## Getting Started
 
-Here're some of the project's best features:
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
 
-*   Support for Multiple Formats
-*   Efficient Compression
-*   Batch Processing
-*   Fast Execution
-*   Space Optimization
-*   Flexible Settings
+### Prerequisites
 
-<h2>💻 Built with</h2>
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-Technologies used in the project:
+### Installation
 
-*   Nuxt3
-*   TailwindCSS
-*   TypeScript
+2. Clone the repo
+   ```sh
+   git clone https://github.com/github_username/repo_name.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Change git remote url to avoid accidental pushes to base project
+   ```sh
+   git remote set-url origin github_username/repo_name
+   git remote -v # confirm the changes
+   ```
+<!-- LICENSE -->
+## License
 
-<h2>🛡️ License:</h2>
+Distributed under the CC BY
 
-This project is licensed under the CC BY
 
-## Setup
+<!-- CONTACT -->
+## Contact
 
-Make sure to install dependencies:
+Artur - [@MikroTik2](https://www.linkedin.com/in/artur-dotsent-0a3a722a1/)</br>
+Vlad - [@vladislav2251](https://www.linkedin.com/in/vlad-didyk-2842a8269/) </br>
+Project Link: [https://github.com/MikroTik2/tools.files](https://github.com/MikroTik2/tools.files)</br>
 
-```bash
-# npm
-npm install
+<!-- MARKDOWN LINKS & IMAGES -->
+[Nuxt-url]: https://nuxt.com/
+[linkedin-url]: https://linkedin.com/in/othneildrew
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-  
