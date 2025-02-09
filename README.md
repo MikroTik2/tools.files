@@ -1,5 +1,6 @@
 ## About
 Our service provides a convenient and fast way to compress files without quality loss. Using powerful FFmpeg-based compression algorithms, we ensure minimal file size while preserving their original resolution and clarity. 
+
 ![Описание изображения](public/images/docs.png)
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
