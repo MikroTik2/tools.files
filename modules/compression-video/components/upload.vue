@@ -21,6 +21,8 @@ const ffmpeg = new FFmpeg();
 const fileUploader = ref<InstanceType<typeof FileUpload> | null>(null);
 const file = ref<File | null>(null);
 const url = ref<string | null>(null);
+const originalSize = ref<number>(0);
+const compressedSize = ref<number>(0);
 
 const loaderStates = reactive({
     isProcessing: false,
@@ -74,7 +76,7 @@ function handleAsyncLoadingComplete() {
 
     toast({
         title: 'Download Ready',
-        description: 'Your compressed video is ready for download.',
+        description: `Your compressed video is ready for download. ${formatSize(originalSize.value)} → ${formatSize(compressedSize.value)}`,
         duration: 20000,
         action: h(ToastAction, {
             altText: 'Download',
@@ -87,9 +89,22 @@ function handleAsyncLoadingComplete() {
     });
 }
 
+function formatSize(bytes: number): string {
+    if (bytes < 1024)
+        return `${bytes} B`;
+    const units = ['KB', 'MB', 'GB'];
+    let unitIndex = -1;
+    do {
+        bytes /= 1024;
+        unitIndex++;
+    } while (bytes >= 1024 && unitIndex < units.length - 1);
+    return `${bytes.toFixed(2)} ${units[unitIndex]}`;
+}
+
 function handleFileUpload(event: File[]) {
     if (event.length) {
         file.value = event[0];
+        originalSize.value = event[0].size;
     }
 }
 
@@ -141,6 +156,7 @@ async function compression() {
         const data = await ffmpeg.readFile(`${file.value.name}.mp4`);
         const blob = new Blob([data], { type: 'video/mp4' });
         url.value = URL.createObjectURL(blob);
+        compressedSize.value = blob.size;
 
         loaderStates.isFileCompressing = false;
         handleAsyncLoadingComplete();
@@ -150,7 +166,7 @@ async function compression() {
             variant: 'destructive',
             description: 'An error occurred during compression.',
         });
-    };
+    }
 };
 
 async function startAsyncLoading() {
@@ -159,10 +175,8 @@ async function startAsyncLoading() {
             variant: 'destructive',
             description: 'Please upload a file to continue',
         });
-
         return;
-    };
-
+    }
     await compression();
 }
 </script>
