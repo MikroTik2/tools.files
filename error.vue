@@ -13,7 +13,7 @@ const props = defineProps({
                 {{ props.error?.statusCode }}
             </h3>
             <p class="scroll-m-20 px-4">
-                This page could not be found.
+                {{ props.error?.statusCode === 500 ? 'Internal Server Error. Please try again later.' : 'This page could not be found.' }}
             </p>
         </div>
     </div>
