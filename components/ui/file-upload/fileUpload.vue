@@ -9,9 +9,12 @@ interface FileUploadProps {
     class?: HTMLAttributes['class'];
     accept?: string;
     maxSize?: number;
+    multiple?: boolean;
 }
 
-const props = defineProps<FileUploadProps>();
+const props = withDefaults(defineProps<FileUploadProps>(), {
+    multiple: true,
+});
 
 const emit = defineEmits<{
     (e: 'onChange', files: File[]): void;
@@ -90,6 +93,7 @@ defineExpose({
                     ref="fileInputRef"
                     type="file"
                     class="hidden"
+                    :multiple="props.multiple"
                     :accept="props.accept"
                     @change="onFileChange"
                 >

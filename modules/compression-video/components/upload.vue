@@ -76,7 +76,7 @@ function handleAsyncLoadingComplete() {
 
     toast({
         title: 'Download Ready',
-        description: `Your compressed video is ready for download. ${formatSize(originalSize.value)} → ${formatSize(compressedSize.value)}`,
+        description: `Your compressed video is ready for download. ${formatBytes(originalSize.value)} → ${formatBytes(compressedSize.value)}`,
         duration: 20000,
         action: h(ToastAction, {
             altText: 'Download',
@@ -87,18 +87,8 @@ function handleAsyncLoadingComplete() {
             default: () => 'Download',
         }),
     });
-}
 
-function formatSize(bytes: number): string {
-    if (bytes < 1024)
-        return `${bytes} B`;
-    const units = ['KB', 'MB', 'GB'];
-    let unitIndex = -1;
-    do {
-        bytes /= 1024;
-        unitIndex++;
-    } while (bytes >= 1024 && unitIndex < units.length - 1);
-    return `${bytes.toFixed(2)} ${units[unitIndex]}`;
+    file.value = null;
 }
 
 function handleFileUpload(event: File[]) {
@@ -191,7 +181,14 @@ async function startAsyncLoading() {
 
             <Separator class="mb-4" />
 
-            <FileUpload ref="fileUploader" accept="video/*" :max-size="50" class="rounded-lg border border-dashed border-neutral-200 dark:border-neutral-800" @on-change="handleFileUpload">
+            <FileUpload
+                ref="fileUploader"
+                accept="video/*"
+                :max-size="100"
+                :multiple="false"
+                class="rounded-lg border border-dashed border-neutral-200 dark:border-neutral-800"
+                @on-change="handleFileUpload"
+            >
                 <FileUploadGrid />
             </FileUpload>
 
