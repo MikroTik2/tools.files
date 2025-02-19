@@ -1,4 +1,12 @@
 <script setup lang="ts">
+import { useToast } from '@/components/ui/toast/use-toast';
+import { FFmpeg } from '@ffmpeg/ffmpeg';
+import { fetchFile, toBlobURL } from '@ffmpeg/util';
+import { FileUpload } from '~/components/ui/file-upload';
+import { ToastAction } from '~/components/ui/toast';
+
+const { toast } = useToast();
+
 interface Step {
     text: string;
     afterText?: string;
@@ -6,6 +14,13 @@ interface Step {
     duration?: number;
     action?: () => void;
 }
+
+const baseURL = 'https://unpkg.com/@ffmpeg/core-mt@0.12.6/dist/esm';
+const ffmpeg = new FFmpeg();
+
+const fileUploader = ref<InstanceType<typeof FileUpload> | null>(null);
+const file = ref<File | null>(null);
+const url = ref<string | null>(null);
 
 const loaderStates = reactive({
     isProcessing: false,
@@ -53,43 +68,102 @@ const asyncLoadingSteps = computed<Step[]>(() => [
     },
 ]);
 
-function handleStateChange(_state: number) {
-    // Handle Loading State Change
-}
-
-function handleComplete() {
-    // Handle Loading Complete
-}
-
-/* eslint-disable no-alert */
 function handleAsyncLoadingComplete() {
-    alert('Async file compression complete, redirecting...');
     uiState.isAfterTextLoading = false;
+    fileUploader.value?.clearFiles();
+
+    toast({
+        title: 'Download Ready',
+        description: 'Your compressed video is ready for download.',
+        duration: 20000,
+        action: h(ToastAction, {
+            altText: 'Download',
+            as: 'a',
+            href: url.value,
+            download: `${file.value?.name}`,
+        }, {
+            default: () => 'Download',
+        }),
+    });
 }
 
-async function startAsyncLoading() {
-    uiState.isAfterTextLoading = true;
-    loaderStates.isProcessing = true;
-    loaderStates.isCompressing = true;
-    loaderStates.isVerifyingData = true;
-
-    function simulateAsyncStep(stateProp: keyof typeof loaderStates, delay: number) {
-        return new Promise<void>((resolve) => {
-            setTimeout(() => {
-                loaderStates[stateProp] = false;
-                resolve();
-            }, delay);
-        });
+function handleFileUpload(event: File[]) {
+    if (event.length) {
+        file.value = event[0];
     }
+}
+
+async function compression() {
+    if (!file.value)
+        return;
 
     try {
-        await simulateAsyncStep('isProcessing', 2000);
-        await simulateAsyncStep('isCompressing', 3000);
-        await simulateAsyncStep('isVerifyingData', 2500);
+        uiState.isAfterTextLoading = true;
+        loaderStates.isProcessing = true;
+        await ffmpeg.load({
+            coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
+            wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
+            workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, 'text/javascript'),
+        });
+
+        loaderStates.isProcessing = false;
+        loaderStates.isCompressing = true;
+
+        await ffmpeg.writeFile(file.value.name, await fetchFile(file.value));
+
+        loaderStates.isCompressing = false;
+        loaderStates.isVerifyingData = true;
+
+        await ffmpeg.exec([
+            '-i',
+            file.value.name,
+            '-c:v',
+            'libx264',
+            '-tag:v',
+            'avc1',
+            '-movflags',
+            'faststart',
+            '-crf',
+            '30',
+            '-preset',
+            'superfast',
+            '-progress',
+            '-',
+            '-v',
+            '',
+            '-y',
+            `${file.value.name}.mp4`,
+        ]);
+
+        loaderStates.isVerifyingData = false;
+        loaderStates.isFileCompressing = true;
+
+        const data = await ffmpeg.readFile(`${file.value.name}.mp4`);
+        const blob = new Blob([data], { type: 'video/mp4' });
+        url.value = URL.createObjectURL(blob);
+
+        loaderStates.isFileCompressing = false;
+        handleAsyncLoadingComplete();
     }
     catch {
-        uiState.isAfterTextLoading = false;
-    }
+        toast({
+            variant: 'destructive',
+            description: 'An error occurred during compression.',
+        });
+    };
+};
+
+async function startAsyncLoading() {
+    if (!file.value) {
+        toast({
+            variant: 'destructive',
+            description: 'Please upload a file to continue',
+        });
+
+        return;
+    };
+
+    await compression();
 }
 </script>
 
@@ -103,14 +177,13 @@ async function startAsyncLoading() {
 
             <Separator class="mb-4" />
 
-            <FileUpload accept="video/*" :max-size="10" class="rounded-lg border border-dashed border-neutral-200 dark:border-neutral-800">
+            <FileUpload ref="fileUploader" accept="video/*" :max-size="50" class="rounded-lg border border-dashed border-neutral-200 dark:border-neutral-800" @on-change="handleFileUpload">
                 <FileUploadGrid />
             </FileUpload>
+
             <MultiStepLoader
                 :steps="asyncLoadingSteps"
                 :loading="uiState.isAfterTextLoading"
-                @state-change="handleStateChange"
-                @complete="handleComplete"
                 @close="uiState.closeAsync"
             />
             <InteractiveButton
@@ -119,5 +192,7 @@ async function startAsyncLoading() {
                 @click="startAsyncLoading"
             />
         </Container>
+
+        <Toaster />
     </section>
 </template>

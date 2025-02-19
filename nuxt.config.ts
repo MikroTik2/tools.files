@@ -1,4 +1,4 @@
-import { css, eslint, head, modules, nitro, shadcn, vite } from './config';
+import { css, eslint, head, modules, nitro, routeRules, shadcn, vite } from './config';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -11,4 +11,5 @@ export default defineNuxtConfig({
     app: { head },
     devtools: { enabled: false },
     compatibilityDate: '2025-02-07',
+    routeRules,
 });
