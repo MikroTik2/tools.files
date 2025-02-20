@@ -9,9 +9,12 @@ interface FileUploadProps {
     class?: HTMLAttributes['class'];
     accept?: string;
     maxSize?: number;
+    multiple?: boolean;
 }
 
-const props = defineProps<FileUploadProps>();
+const props = withDefaults(defineProps<FileUploadProps>(), {
+    multiple: true,
+});
 
 const emit = defineEmits<{
     (e: 'onChange', files: File[]): void;
@@ -23,10 +26,17 @@ const isActive = ref<boolean>(false);
 
 const { toast } = useToast();
 
+function clearFiles() {
+    files.value = [];
+    if (fileInputRef.value) {
+        fileInputRef.value.value = '';
+    }
+}
+
 function handleFileChange(newFiles: File[]) {
     const filteredFiles = newFiles.filter((file: File) => {
         if (props.maxSize && file.size > props.maxSize * 1024 * 1024) {
-            toast({ title: 'Error', description: `File ${file.name} exceeds the maximum size of ${props.maxSize}MB` });
+            toast({ title: 'Error', variant: 'destructive', description: `File ${file.name} exceeds the maximum size of ${props.maxSize}MB` });
             return false;
         };
 
@@ -60,6 +70,10 @@ function handleDrop(e: DragEvent) {
     if (droppedFiles.length)
         handleFileChange(droppedFiles);
 }
+
+defineExpose({
+    clearFiles,
+});
 </script>
 
 <template>
@@ -79,6 +93,7 @@ function handleDrop(e: DragEvent) {
                     ref="fileInputRef"
                     type="file"
                     class="hidden"
+                    :multiple="props.multiple"
                     :accept="props.accept"
                     @change="onFileChange"
                 >
@@ -173,10 +188,8 @@ function handleDrop(e: DragEvent) {
                                         : {}
                                 "
                             >
-                                <Icon
-                                    name="heroicons:arrow-up-tray-20-solid"
+                                <LucideArrowUpFromLine
                                     class="text-neutral-600 dark:text-neutral-400"
-                                    size="20"
                                 />
                             </Motion>
 
